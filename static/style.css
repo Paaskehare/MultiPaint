@@ -1,0 +1,297 @@
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background: #eaeaea;
+  font-family: arial, sans-serif, serif;
+  font-size: 9pt;
+}
+
+#paintapp {
+  display: none;
+}
+
+#header {
+  display: block;
+  height: 102px;
+  width: 100%;
+}
+
+#header #nav {
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  background: #222;
+  width: 100%;
+}
+
+#header #tools {
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  width: 100%;
+  background: white;
+  border-bottom: 1px solid #ccc;
+  box-shadow: 0 3px 2px #ddd;
+}
+
+#header #tools ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+#header #tools ul li {
+  float: left;
+}
+
+#header #tools ul li div {
+  display: block;
+  padding: 0 10px 0 10px;
+  cursor: pointer;
+}
+
+#header #tools ul li div.selected {
+  background: #ccc;
+}
+
+#main {
+  display: block;
+  position: absolute;
+  top: 102px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  overflow: auto;
+}
+
+#chatbox {
+  width: 250px;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: white;
+}
+
+#chatbox ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#chatbox ul li {
+  display: block;
+  line-height: 15px;
+}
+
+#chatbox #chat li:nth-child(odd) {
+  background: #eaeaea;
+}
+
+#chatbox ul li .timestamp {
+  display: none;
+}
+
+#chatbox ul li .username {
+  font-weight: bold;
+  width: 50px;
+  margin-right: 5px;
+}
+
+#chatbox ul li .message {
+  
+}
+
+#message {
+  width: 100%;
+  border: 1px solid #ccc;
+}
+
+#paintbox {
+  display: block;
+  position: relative;
+  /* DELETE ME */
+  width: 800px;
+  height: 600px;
+  background: white;
+  /* DELETE ME */
+  box-shadow: 0 0 20px #ccc;
+  left: 50px;
+  top: 50px;
+}
+
+#imageNet {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#imageTemp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+#tool_color {
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+
+#cur_color {
+  display: block;
+  height: 50px;
+  width: 50px;
+  position: relative;
+}
+
+#cur_color span {
+  position: relative;
+  display: block;
+  top: 15px;
+  left: 15px;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #333;
+  border-radius: 4px;
+}
+
+#colors {
+  position: absolute;
+  display: block;
+  width: 140px;
+  z-index: 4;
+  background: white;
+}
+
+#colors ul {
+  display: none;
+}
+
+#colors li {
+  float: left;
+  margin: 5px;
+}
+
+#colors li span {
+  border: 1px solid #ccc;
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 3px;
+}
+
+#cur_size {
+  position: relative;
+  width: 30px;
+  height: 50px;
+}
+
+#tool_size .brush {
+  display: block;
+  background: black;
+  position: relative;
+  margin: 0 auto;
+}
+
+#tool_size .brush.small {
+  top: 13px;
+  width: 2px; height: 2px;
+  border-radius: 2px;
+}
+
+#tool_size .brush.medium {
+  top: 11px;
+  width: 4px; height: 4px;
+  border-radius: 4px;
+}
+
+#tool_size .brush.big {
+  top: 7px;
+  width: 8px; height: 8px;
+  border-radius: 8px;
+}
+
+#tool_size .brush.huge {
+  top: 3px; 
+  width: 12px; height: 12px;
+  border-radius: 12px;
+}
+
+#tool_size #sizes {
+  background: white;
+  position: absolute;
+  z-index: 4;
+}
+
+#tool_size #sizes ul {
+  display: none;  
+  width: 30px;
+  height: 120px;
+}
+
+#tool_size #sizes li {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: block;
+  float: none;
+}
+
+#colors, #sizes {
+  box-shadow: 0 5px 5px #ccc;
+}
+
+#cur_size .brush.small  { top: 23px; }
+#cur_size .brush.medium { top: 21px; }
+#cur_size .brush.big    { top: 19px; }
+#cur_size .brush.huge   { top: 18px; }
+
+#link {
+  background: #eaeaea;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+#login {
+  padding: 50px;
+  text-align: center;
+}
+
+#submit {
+  margin:0 3px 3px 0px;
+  padding:5px 10px;
+  text-decoration:none;
+  text-shadow:0 1px 0 white;
+  border: 0;
+
+  font-weight:bold;
+  color:#666666;
+  background:#DDD;
+	
+  -moz-box-shadow:inset 0px 0px 3px 0px rgba(0,0,0,.4);
+  -o-box-shadow:inset 0px 0px 3px 0px rgba(0,0,0,.4);
+  -webkit-box-shadow:inset 0px 0px 3px 0px rgba(0,0,0,.4);
+  box-shadow:inset 0px 0px 3px 0px rgba(0,0,0,.4);
+	
+  -moz-border-radius: 3px;
+  -o-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+
+  cursor: pointer;
+}
+
+#submit:hover {
+  background:#EEE;
+  -moz-box-shadow:inset 0px 1px 3px 0px rgba(0,0,0,.4);
+  -o-box-shadow:inset 0px 1px 3px 0px rgba(0,0,0,.4);
+  -webkit-box-shadow:inset 0px 1px 3px 0px rgba(0,0,0,.4);
+  box-shadow:inset 0px 1px 3px 0px rgba(0,0,0,.4);
+}
